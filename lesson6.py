@@ -1,8 +1,3 @@
-user_password = input("Введите пароль: ")
-password_list = list(user_password)
-score = 0
-
-
 def is_very_long(user_password):
     return len(user_password) > 12
 
@@ -23,7 +18,7 @@ def has_symbols(user_password):
     return any(not char.isdigit() and not char.isalpha() for char in user_password)
 
 
-all_functions = [
+ALL_FUNCTIONS = [
     is_very_long,
     has_digit,
     has_upper_letters,
@@ -31,8 +26,13 @@ all_functions = [
     has_symbols,
 ]
 
-for check in all_functions:
-    if check(user_password):
-        score += 2
+def main():
+    SCORE = 0
+    for check in ALL_FUNCTIONS:
+        if check(user_password):
+            SCORE += 2
+    print("Рейтинг пароля:", SCORE)
 
-print("Рейтинг пароля:", score)
+if __name__ == "__main__":
+    user_password = input("Введите пароль: ")
+    main()    
