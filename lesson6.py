@@ -18,20 +18,21 @@ def has_symbols(user_password):
     return any(not char.isdigit() and not char.isalpha() for char in user_password)
 
 
-ALL_FUNCTIONS = [
-    is_very_long,
-    has_digit,
-    has_upper_letters,
-    has_lower_letters,
-    has_symbols,
-]
-
 def main():
     user_password = input("Введите пароль: ")
     score = 0
-    for check in ALL_FUNCTIONS:
+    all_functions = [
+        is_very_long,
+        has_digit,
+        has_upper_letters,
+        has_lower_letters,
+        has_symbols
+    ]
+    
+    for check in all_functions:
         if check(user_password):
             score += 2
+    
     print("Рейтинг пароля:", score)
 
 if __name__ == "__main__":
