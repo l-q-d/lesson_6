@@ -27,12 +27,12 @@ ALL_FUNCTIONS = [
 ]
 
 def main():
-    SCORE = 0
+    user_password = input("Введите пароль: ")
+    score = 0
     for check in ALL_FUNCTIONS:
         if check(user_password):
-            SCORE += 2
-    print("Рейтинг пароля:", SCORE)
+            score += 2
+    print("Рейтинг пароля:", score)
 
 if __name__ == "__main__":
-    user_password = input("Введите пароль: ")
     main()    
